@@ -1,0 +1,211 @@
+.projects {
+  padding: 20px 20px 60px; 
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.heading {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin-bottom: 40px;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+
+.cardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0 10px;
+  gap: 40px;              
+  margin-bottom: 50px;    
+}
+
+.card {
+  flex: 1 1 clamp(180px, 22%, 220px);
+  aspect-ratio: 3 / 4;
+  perspective: 1200px;
+  cursor: pointer;
+  position: relative;
+  min-width: 160px;
+  max-width: 240px;
+  margin: 10px;          
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.card:hover .cardInner {
+  transform: rotateY(180deg);
+}
+
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  padding: 15px;
+}
+
+.cardFront {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+}
+
+.cardFront h3 {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin: 0;
+}
+
+.cardBack {
+  background: linear-gradient(135deg, #2a5298, #1e3c72);
+  transform: rotateY(180deg);
+  text-align: center;
+  padding: 15px;
+}
+
+.cardBack ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.cardBack li {
+  padding: 8px;
+  margin: 6px 0;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  word-wrap: break-word;
+}
+
+.cardBack li:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.cardBack li:active {
+  transform: scale(0.95);
+}
+
+.projectLink {
+  font-weight: 500;
+  color: #fff;
+}
+
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal {
+  background: hsla(219, 46%, 31%, 0.95);
+  backdrop-filter: blur(6px);
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 90%;
+  width: 600px;
+  max-height: 80%;
+  overflow-y: auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  text-align: left;
+  color: #ffffff;
+}
+
+.modal h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+.modal p {
+  margin: 10px 0 20px;
+  font-size: 1rem;
+}
+
+.images {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.images img {
+  max-width: 100px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.demoLink {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 8px 14px;
+  background: #e50914;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.demoLink:hover {
+  background: #b20710;
+}
+
+.closeBtn {
+  background: #e74c3c;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  float: right;
+}
+
+.closeBtn:hover {
+  background: #c0392b;
+}
+
+@media (max-width: 768px) {
+  .cardsWrapper {
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin: 15px 0; 
+  }
+}
