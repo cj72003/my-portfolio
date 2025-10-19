@@ -40,9 +40,8 @@ class Header extends Component {
           <a href="#certificates">Certificates</a>
           <a href="#contact">Contacts</a>
           <a
-          href={process.env.PUBLIC_URL + "/cv/Camille-CV.pdf"}
-          download="Camille-CV.pdf"
-          className="btn"
+          href={process.env.PUBLIC_URL + "/cv/camillejuego_CV.pdf"}
+          download="camillejuego_CV.pdf"
           >
   Download CV
 </a>
